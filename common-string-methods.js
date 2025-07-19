@@ -68,36 +68,107 @@ Complete the following tasks and assign the results to the specified variables. 
 //Starter Code
 let inputString = "  Welcome to the Coding Bootcamp! Learn JavaScript today.  ";
 
+// Practice Problem #1
+
+// Activity 1: Searching Strings
+console.log("--- Activity 1: Searching Strings ---");
+let text1 = "Learning JavaScript is fun!";
+let includesJavaScript = text1.includes("JavaScript");
+console.log(`Is "JavaScript" in the string? ${includesJavaScript}`); // Expected: true
+
+let positionOfFun = text1.indexOf("fun");
+console.log(`Position of "fun": ${positionOfFun}`); // Expected: 22 (index starts at 0)
+
+// Activity 2: Transforming Strings
+console.log("\n--- Activity 2: Transforming Strings ---");
+let originalString = " CODE BOOTCAMP ";
+
+// Convert to lowercase and remove whitespace
+let transformedString = originalString.trim().toLowerCase();
+console.log(`Transformed string (trimmed & lowercase): "${transformedString}"`); // Expected: "code bootcamp"
+
+// Replace "BOOTCAMP" with "JavaScript" in the transformed string
+// Note: 'transformedString' is already lowercase, so we replace 'bootcamp'
+let replacedString = transformedString.replace("bootcamp", "javascript");
+console.log(`Replaced string: "${replacedString}"`); // Expected: "code javascript"
+
+// Activity 3: Breaking Apart a Sentence
+console.log("\n--- Activity 3: Breaking Apart a Sentence ---");
+let sentence = "Coding is fun and educational";
+let wordsArray = sentence.split(" ");
+console.log(`Array of words: [${wordsArray.map(word => `"${word}"`).join(', ')}]`); // Expected: ["Coding", "is", "fun", "and", "educational"]
+
+// Activity 4: Retrieving Substrings
+console.log("\n--- Activity 4: Retrieving Substrings ---");
+let word = "Bootcamp";
+
+// Retrieve the first character
+let firstCharacter = word.charAt(0);
+console.log(`First character of "Bootcamp": "${firstCharacter}"`); // Expected: "B"
+
+// Extract the word "camp"
+let extractedSubstring = word.slice(4); // 'c' is at index 4
+console.log(`Extracted "camp": "${extractedSubstring}"`); // Expected: "camp"
+
+// Advanced Challenge
+console.log("\n--- Advanced Challenge ---");
+let multiLineString = `Customer: John Doe
+Order: Apple, Banana, Grape
+Total: $20.50`;
+
+// Extract the customer name
+let customerLine = multiLineString.split("\n")[0];
+let customerName = customerLine.split(": ")[1];
+console.log(`Customer Name: "${customerName}"`); // Expected: "John Doe"
+
+// Split the order into an array of items
+let orderLine = multiLineString.split("\n")[1];
+let orderItemsString = orderLine.split(": ")[1];
+let orderItemsArray = orderItemsString.split(", ");
+console.log(`Order Items: [${orderItemsArray.map(item => `"${item}"`).join(', ')}]`); // Expected: ["Apple", "Banana", "Grape"]
+
+// Convert the total price line to uppercase
+let totalLine = multiLineString.split("\n")[2];
+let uppercaseTotalLine = totalLine.toUpperCase();
+console.log(`Uppercase Total: "${uppercaseTotalLine}"`); // Expected: "TOTAL: $20.50"
+
+
+console.log("\n--- Practice Problem #2 ---");
+
+// Starter Code for Problem #2
+let problem2InputString = "   Welcome to the Coding Bootcamp! Learn JavaScript today.   ";
+
 // 1. Searching
-let hasJavaScript; // Your code here
-let codingPosition; // Your code here
-let startsWithWelcome; // Your code here
-let endsWithToday; // Your code here
+let problem2HasJavaScript = problem2InputString.includes("JavaScript");
+let problem2CodingPosition = problem2InputString.indexOf("Coding");
+let problem2StartsWithWelcome = problem2InputString.trim().startsWith("Welcome");
+let problem2EndsWithToday = problem2InputString.trim().endsWith("today.");
 
 // 2. Transforming
-let lowercaseString; // Your code here
-let uppercaseString; // Your code here
-let trimmedString; // Your code here
-let replacedString; // Your code here
+let problem2LowercaseString = problem2InputString.toLowerCase();
+let problem2UppercaseString = problem2InputString.toUpperCase();
+let problem2TrimmedString = problem2InputString.trim();
+let problem2ReplacedString = problem2InputString.replace("JavaScript", "coding");
 
 // 3. Breaking Apart
-let wordsArray; // Your code here
+let problem2WordsArray = problem2InputString.split(" ");
 
 // 4. Retrieving
-let firstCharacter; // Your code here
-let extractedBootcamp; // Your code here
+let problem2FirstCharacter = problem2TrimmedString.charAt(0);
+let problem2IndexOfBootcamp = problem2InputString.indexOf("Bootcamp");
+let problem2ExtractedBootcamp = problem2InputString.slice(problem2IndexOfBootcamp, problem2IndexOfBootcamp + "Bootcamp".length);
 
-// Log all results
+// Log all results for Problem #2
 console.log({
-  hasJavaScript,
-  codingPosition,
-  startsWithWelcome,
-  endsWithToday,
-  lowercaseString,
-  uppercaseString,
-  trimmedString,
-  replacedString,
-  wordsArray,
-  firstCharacter,
-  extractedBootcamp,
+  problem2HasJavaScript,
+  problem2CodingPosition,
+  problem2StartsWithWelcome,
+  problem2EndsWithToday,
+  problem2LowercaseString,
+  problem2UppercaseString,
+  problem2TrimmedString,
+  problem2ReplacedString,
+  problem2WordsArray,
+  problem2FirstCharacter,
+  problem2ExtractedBootcamp,
 });
